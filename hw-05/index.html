@@ -94,56 +94,63 @@
         },
     ];
 
-    const getAllNames = arr => {
-        return arr.map(obj => obj.name)
+    // const getAllNames = arr => {
+    //     return arr.map(obj => obj.name)
 
+    // };
+
+    // console.log(getAllNames(users));
+
+    // const getUsersByEyeColor = (arr, color) => {
+    //     return arr.filter(obj => obj.eyeColor === color)
+    // };
+
+    // console.log(getUsersByEyeColor(users, 'blue'));
+
+    // const getUsersByGender = (arr, gender) => {
+    //     const filterGender = arr.filter(filterGender => filterGender.gender === gender).map(filterGender => filterGender.name);
+    //     return filterGender;
+    // };
+
+    // console.log(getUsersByGender(users, 'male'));
+
+    // const getInactiveUsers = arr => {
+    //     const isActiveUsers = arr.filter(isActiveUsers => isActiveUsers.isActive === false);
+    //     return isActiveUsers;
+    // };
+
+    // console.log(getInactiveUsers(users));
+
+    // const getUserByEmail = (arr, email) => {
+    //     const findEmail = arr.find(findEmail => findEmail.email === email);
+    //     return findEmail;
+    // };
+
+    // console.log(getUserByEmail(users, 'shereeanthony@kog.com'));
+    // console.log(getUserByEmail(users, 'elmahead@omatom.com'));
+
+    // const getUsersWithAge = (arr, min, max) => {
+    //     const filterAge = arr.filter(filterAge => (filterAge.age >= min && filterAge.age <= max));
+    //     return filterAge;
+    // };
+
+    // console.log(getUsersWithAge(users, 20, 30));
+    // console.log(getUsersWithAge(users, 30, 40));
+
+    // const getTotalBalance = arr => {
+    //     const filterBalance = arr.filter(filterBalance => filterBalance.balance).map(filterBalance => filterBalance.balance);
+    //     const getTotalBalance = filterBalance.reduce((acc, value) => acc + value, 0);
+    //     return getTotalBalance;
+    // };
+
+    // console.log(getTotalBalance(users));
+
+
+    const getAllSkills = arr => {
+        const usersSkills = arr.map(usersSkills => usersSkills.skills);
+        console.log(usersSkills);
+        
     };
 
-    console.log(getAllNames(users));
-
-    const getUsersByEyeColor = (arr, color) => {
-        return arr.filter(obj => obj.eyeColor === color)
-    };
-
-    console.log(getUsersByEyeColor(users, 'blue'));
-
-    const getUsersByGender = (arr, gender) => {
-        const filterGender = arr.filter(filterGender => filterGender.gender === gender).map(filterGender => filterGender.name);
-        return filterGender;
-    };
-
-    console.log(getUsersByGender(users, 'male'));
-
-    const getInactiveUsers = arr => {
-        const isActiveUsers = arr.filter(isActiveUsers => isActiveUsers.isActive === false);
-        return isActiveUsers;
-    };
-
-    console.log(getInactiveUsers(users));
-
-    const getUserByEmail = (arr, email) => {
-        const findEmail = arr.find(findEmail => findEmail.email === email);
-        return findEmail;
-    };
-
-    console.log(getUserByEmail(users, 'shereeanthony@kog.com')); 
-    console.log(getUserByEmail(users, 'elmahead@omatom.com'));
-
-    const getUsersWithAge = (arr, min, max) => {
-        const filterAge = arr.filter(filterAge => (filterAge.age >= min && filterAge.age <= max));
-        return filterAge;
-    };
-
-    console.log(getUsersWithAge(users, 20, 30));
-    console.log(getUsersWithAge(users, 30, 40));
-
-    const getTotalBalance = arr => {
-        const filterBalance = arr.filter(filterBalance => filterBalance.balance).map(filterBalance => filterBalance.balance);
-        const getTotalBalance = filterBalance.reduce((acc, value) => acc + value, 0);
-        return getTotalBalance;
-    };
-
-    console.log(getTotalBalance(users));
-
-    
+    console.log(getAllSkills(users));
 </script>
