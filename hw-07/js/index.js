@@ -35,10 +35,11 @@ function createPostCard({
     let postLink = document.createElement('a');
     postLink.setAttribute('href', linkUrl);
 
-    container.appendChild(postImg);
-    container.appendChild(postTitle);
-    container.appendChild(postText);
     container.appendChild(postLink);
+    postLink.appendChild(postImg);
+    postLink.appendChild(postTitle);
+    container.appendChild(postText);
+    
     return container;
 }
 
@@ -56,5 +57,7 @@ posts.forEach(post => {
 });
 
 
-body.append(...postList);
+let wrapper = document.createElement('div');
+wrapper.append(...postList);
 
+body.append(wrapper);
