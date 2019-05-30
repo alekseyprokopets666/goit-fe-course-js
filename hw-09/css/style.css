@@ -1,0 +1,12 @@
+.wrapper{
+    padding-top: 50px;
+    text-align: center;
+}
+.time{
+    font-size: 50px;
+}
+.btn{
+    font-size: 20px;
+    border-radius: 4px;
+    background: none;
+}
