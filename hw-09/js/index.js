@@ -1,3 +1,4 @@
+
 const jsTime = document.querySelector('.js-time');
 const jsStart = document.querySelector('.js-start');
 const jsTakeLap = document.querySelector('.js-take-lap');
