@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form class="form js-form">
+            <section>
+                <h2>Screen size</h2>
+                <ul class="section-list">
+                    <li><label><input type="checkbox" name="size" value="13" > 13"</label></li>
+                    <li><label><input type="checkbox" name="size" value="15"> 15"</label></li>
+                    <li><label><input type="checkbox" name="size" value="17"> 17"</label></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Color</h2>
+                <ul class="section-list">
+                    <li><label><input type="checkbox" name="color" value="white"> white</label></li>
+                    <li><label><input type="checkbox" name="color" value="gray"> gray</label></li>
+                    <li><label><input type="checkbox" name="color" value="black" > black</label></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Release date</h2>
+                <ul class="section-list">
+                    <li><label><input type="checkbox" name="release_date" value="2015"> 2015</label></li>
+                    <li><label><input type="checkbox" name="release_date" value="2016" > 2016</label></li>
+                    <li><label><input type="checkbox" name="release_date" value="2017"> 2017</label></li>
+                </ul>
+            </section>
+            <button type="submit">Filter</button>
+            <button type="reset">Clear</button>
+
+        </form>
+        <ul class="list"></ul>
+        <div class="cards">
+            <template id="laptops-cards">
+                {{#each this}}
+                <li class="list-item">
+                    <h2 class="name">{{name}}</h2>
+                    <img src="{{img}}" alt="laptop">
+                    <p class="size"><span class="subtitle">Size:</span> {{size}}</p>
+                    <p class="color"><span class="subtitle">Color:</span> {{color}}</p>
+                    <p class="price"><span class="subtitle">Price:</span> {{price}}</p>
+                    <p class="release_date"><span class="subtitle">Release date:</span> {{release_date}}</p>
+                    <p class="descr"><span class="subtitle">Description:</span> {{descr}}</p>
+                </li>
+
+                {{/each}}
+            </template>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

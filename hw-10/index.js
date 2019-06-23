@@ -14,6 +14,8 @@ const inputRemoveUserId = document.querySelector('.input-remove-user-id');
 const inputUpdateUserId = document.querySelector('.input-update-user-id');
 const inputUpdateUserName = document.querySelector('.input-update-user-name');
 const inputUpdateUserAge = document.querySelector('.input-update-user-age');
+const btnClearAllUsers = document.querySelector('.btn-clear-all-users');
+let allUsersList_empty = true;
 
 
 btnGetAllUsers.value = 'Get All Users';
@@ -21,27 +23,44 @@ btnFindUserById.value = 'Find User By Id';
 btnAddUser.value = 'Add User';
 btnRemoveUser.value = 'Remove User';
 btnUpdateUser.value = 'Update User';
+btnClearAllUsers.value = 'Clear List';
 
 const url = 'https://test-users-api.herokuapp.com/users/';
+
+btnClearAllUsers.addEventListener('click', clearAllUsers);
+
+function clearAllUsers() {
+    allUsersList_empty = true;
+    allUsersList.innerHTML = '';
+}
 
 
 btnGetAllUsers.addEventListener('click', getAllUsers);
 function getAllUsers() {
-    fetch(url)
-        .then(response => {
-            if (response.ok) return response.json();
+    if (allUsersList_empty) {
+        allUsersList_empty = false;
+        fetch(url)
+            .then(response => {
+                if (response.ok) return response.json();
 
-            throw new Error(`Error while fetching: ${response.statusText}`);
-        })
-        .then(data => {
-            btnGetAllUsers.disabled = true;
+                throw new Error(`Error while fetching: ${response.statusText}`);
+            })
+            .then(data => {
 
-            for (let el of data.data) {
-                allUsersList.innerHTML += `<h3>${el.name}</h3><p>age: ${el.age}</p><p> id: ${el.id}</p> `
+                let arr = data.data.map(el => el
+                )
+                console.log(arr);
+                
+                
+                // allUsersList.innerHTML = `<h3>${arr.name}</h3><p>age: ${arr.age}</p><p> id: ${arr.id}</p> `
+
             }
-        }
-        )
-        .catch(error => console.log(error));
+
+
+            )
+            .catch(error => console.log(error));
+
+    }
 }
 
 
@@ -114,27 +133,27 @@ function removeUser(id) {
 
 btnUpdateUser.addEventListener('click', updateUser);
 
-function updateUser(id){
+function updateUser(id) {
     id = inputUpdateUserId.value;
 
     let update = {
-        name : inputUpdateUserName.value,
-        age : inputUpdateUserAge.value,
+        name: inputUpdateUserName.value,
+        age: inputUpdateUserAge.value,
     }
 
     fetch(`${url}${id}`, {
-    method: 'PUT',
-    body: JSON.stringify(update),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8"
-    }
-  })
-  .then(response => {
-    if (response.ok) return response.json();
+        method: 'PUT',
+        body: JSON.stringify(update),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => {
+            if (response.ok) return response.json();
 
-    throw new Error(`Error while fetching: ${response.statusText}`);
-})
-  .then(data => alert('User updated!'))
-  .catch(error => console.log('ERROR' + error));
+            throw new Error(`Error while fetching: ${response.statusText}`);
+        })
+        .then(data => alert('User updated!'))
+        .catch(error => console.log('ERROR' + error));
 
 }
