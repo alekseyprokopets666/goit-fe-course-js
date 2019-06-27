@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Gulp Starter Kit</title>
+  <!-- build:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endbuild -->
+</head>
+
+<body>
+  <form>
+    <input class="input-link" type="url">
+    <button class="btn-add-link">Add</button>
+  </form>
+  <div class="cards-list"></div>
+
+  <template id="card">
+    {{#each this}}
+    <div class="card">
+      <a href="{{url}}" target="_blank">{{url}}</a>
+      <button class="btn-delete-link" data-url={{url}}>delete</button>
+    </div>
+    {{/each}}
+  </template>
+  <!-- build:js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="main.js"></script>
+  <!-- endbuild  -->
+</body>
+
+</html>
