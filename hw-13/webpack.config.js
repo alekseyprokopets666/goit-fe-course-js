@@ -1,6 +1,5 @@
-// Webpack v4
+
 const path = require("path");
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -32,9 +31,7 @@ module.exports = {
     ]
   },
   plugins: [
-    // new ExtractTextPlugin(
-    //   {filename: 'style.css'}
-    // ),
+
     new MiniCssExtractPlugin({
       filename: "styles.css"
     }),
