@@ -1,23 +1,16 @@
-export default class Controller {
+export default class Controler {
   constructor(model, view) {
-    this.model = model;
-    this.view = view;
-
-    this.view.on("add", this.addListItem.bind(this));
-    this.view.on("remove", this.delListItem.bind(this));
+      this.model = model;
+      this.view = view;
+      view.on('add', this.AddUrl.bind(this));
+      view.on('remove', this.RemoveUrl.bind(this));
   }
-  addListItem(value) {
-    const item = this.model.addBookmark(value);
-    this.view.addBookmark(item);
-  }
-
- 
-
-  delListItem(id) {
-    this.model.delBookmark(id);
-    this.view.delBookmark(id);
+  AddUrl(Url) {
+      console.log(Url);
+      this.model.addItem(Url,this.view.showHandlebars);
   }
 
-
-  
+  RemoveUrl(id) {
+      this.model.removeItem(id,this.view.showHandlebars);
+  }
 }

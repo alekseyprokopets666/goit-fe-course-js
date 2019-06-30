@@ -5,24 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>hw13</title>
+    <title>Modul_13</title>
 </head>
 
 <body>
-    <div class="container">
-        <form class="form js-form">
-            <input class="form__url" type="url">
-            <button class="btn" type="submit">Add</button>
-        </form>
 
-        <ul class="list"></ul>
-        <div class="modal modal-hidden js-modal-backdrop"></div>
+    <form class="form">
+        <input type="text" name="urlAddress" id="urlAddress">
+        <button class="btn btn--save btn-js">Add</button>
+    </form>
 
+    <div id="bookmark-list"></div>
 
-    </div>
+    <template id="bookmark">
+        {{#each this}}
+        <div class="bookmark" bookmarkId="{{this.id}}">
+            <div class="bookmark__edit">
+                <a href="{{this.url}}" class="bookmark__link">{{this.url}}</a>
+                <button class="btn btn--delete" id="delete">Delete</button>
+            </div>
+        </div>
+        {{/each}}
+    </template>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-
 </body>
 
 </html>
