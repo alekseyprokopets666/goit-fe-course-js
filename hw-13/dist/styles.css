@@ -1,0 +1,113 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  box-sizing: content-box; }
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  padding: 20px 10px;
+  width: 1200px; }
+
+.form {
+  display: flex;
+  flex-direction: column; }
+
+.form__name,
+.form__url {
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px; }
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none; }
+
+.list-item {
+  width: 350px;
+  min-height: 80px;
+  border: 1px solid #60dce0;
+  margin: 0 5px 5px 0;
+  position: relative;
+  background: #95c0e4; }
+
+.name--weight {
+  font-weight: 700;
+  font-size: 20px; }
+
+.name {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: normal; }
+
+a {
+  color: #1c1370; }
+
+.btn {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: 0.8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: #40c781;
+  transition: 0.2s; }
+
+.delete {
+  background: rgba(243, 128, 138, 0);
+  border: none; }
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 45, 58, 0.7); }
+
+.modal-hidden {
+  display: none; }
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 450px;
+  min-height: 280px;
+  padding: 50px 80px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 4px rgba(1, 2, 2, 0.2);
+  border-radius: 2px; }
+
+.modal-text {
+  margin-bottom: 15px;
+  color: #2a2a2a;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 42px;
+  text-align: center; }
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url("https://image.flaticon.com/icons/svg/179/179429.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+
